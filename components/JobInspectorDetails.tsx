@@ -9,6 +9,7 @@ interface JobInspectorDetailsProps {
 const JobInspectorDetails: React.FC<JobInspectorDetailsProps> = ({ onClose }) => {
   const [brandingIndex, setBrandingIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const base = import.meta.env.BASE_URL;
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -19,15 +20,15 @@ const JobInspectorDetails: React.FC<JobInspectorDetailsProps> = ({ onClose }) =>
   }, []);
 
   const brandingImages = [
-    "/Branding1.jpg", "/Branding2.jpg", "/Branding3.jpg", "/Branding4.jpg",
-    "/Branding5.jpg", "/Branding6.jpg", "/Branding7.jpg", "/Branding8.jpg"
+    `${base}Branding1.jpg`, `${base}Branding2.jpg`, `${base}Branding3.jpg`, `${base}Branding4.jpg`,
+    `${base}Branding5.jpg`, `${base}Branding6.jpg`, `${base}Branding7.jpg`, `${base}Branding8.jpg`
   ];
 
   const mockupImages = [
-    { src: "/Mockup1.jpg", caption: "GadgetAI Analysis & Scoring" },
-    { src: "/Mockup2.jpg", caption: "Community-Driven Verification" },
-    { src: "/Mockup3.jpg", caption: "Personalized Matching (Fit vs. Unfit)" },
-    { src: "/Mockup4.jpg", caption: "Job Detail View" }
+    { src: `${base}Mockup1.jpg`, caption: "GadgetAI Analysis & Scoring" },
+    { src: `${base}Mockup2.jpg`, caption: "Community-Driven Verification" },
+    { src: `${base}Mockup3.jpg`, caption: "Personalized Matching (Fit vs. Unfit)" },
+    { src: `${base}Mockup4.jpg`, caption: "Job Detail View" }
   ];
 
   const nextBranding = (e?: React.MouseEvent) => {
@@ -106,7 +107,7 @@ const JobInspectorDetails: React.FC<JobInspectorDetailsProps> = ({ onClose }) =>
         {/* Hero Section */}
         <div className="relative h-[60vh] w-full overflow-hidden">
           <img 
-            src="/Job_Inspector2.jpg" 
+            src={`${base}Job_Inspector2.jpg`} 
             alt="Job Inspector Hero" 
             className="w-full h-full object-cover object-center"
           />

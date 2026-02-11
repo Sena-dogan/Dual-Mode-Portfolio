@@ -10,7 +10,7 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ isDevMode }) => {
   // State to manage the image source. 
   // We use a direct string path because browser-native ES modules cannot import images directly.
-  const [jobInspectorSrc, setJobInspectorSrc] = useState("/Job_Inspector2.jpg");
+  const [jobInspectorSrc, setJobInspectorSrc] = useState(`${import.meta.env.BASE_URL}Job_Inspector2.jpg`);
   const [showJobInspector, setShowJobInspector] = useState(false);
 
   const labProjects: Project[] = [
@@ -28,7 +28,7 @@ const Projects: React.FC<ProjectsProps> = ({ isDevMode }) => {
       description: 'Quantum programming certification from QWorld, focusing on the mathematical foundations and implementation of quantum algorithms.',
       tags: ['Quantum', 'Math', 'QWorld'],
       icon: Infinity,
-      link: '/QBronze151-105.jpg',
+      link: `${import.meta.env.BASE_URL}QBronze151-105.jpg`,
     },
     {
       id: 'root',
