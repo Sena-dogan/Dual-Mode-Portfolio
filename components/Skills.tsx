@@ -20,7 +20,7 @@ const Skills: React.FC<SkillsProps> = ({ isDevMode }) => {
   ];
 
   return (
-    <section className={`py-20 px-6 ${isDevMode ? 'bg-[#0f172a]' : 'bg-slate-50'}`}>
+    <section id="skills" className={`py-20 px-6 ${isDevMode ? 'bg-[#0f172a]' : 'bg-slate-50'}`}>
       <div className="max-w-7xl mx-auto">
         <div className="mb-10">
             <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-4 ${
@@ -46,7 +46,7 @@ const Skills: React.FC<SkillsProps> = ({ isDevMode }) => {
              <pre className="text-sm md:text-base leading-relaxed overflow-x-auto">
                 <code>
                     <span className="text-purple-400">const</span> <span className="text-yellow-400">myStack</span> <span className="text-purple-400">=</span> {'{'}<br/>
-                    &nbsp;&nbsp;<span className="text-sky-300">"mobile"</span>: [<span className="text-green-400">"Flutter"</span>, <span className="text-green-400">"SwiftUI"</span>],<br/>
+                    &nbsp;&nbsp;<span className="text-sky-300">"frameworks"</span>: [<span className="text-green-400">"Flutter"</span>, <span className="text-green-400">"SwiftUI"</span>, <span className="text-green-400">"Qt 6"</span>],<br/>
                     &nbsp;&nbsp;<span className="text-sky-300">"design"</span>: [<span className="text-green-400">"Figma"</span>, <span className="text-green-400">"UI/UX"</span>],<br/>
                     &nbsp;&nbsp;<span className="text-sky-300">"backend"</span>: [<span className="text-green-400">"Firebase"</span>, <span className="text-green-400">"Node.js"</span>],<br/>
                     &nbsp;&nbsp;<span className="text-sky-300">"languages"</span>: [<span className="text-green-400">"Dart"</span>, <span className="text-green-400">"C/C++"</span>, <span className="text-green-400">"Python"</span>],<br/>

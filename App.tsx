@@ -40,7 +40,7 @@ const App: React.FC = () => {
 
         <Projects isDevMode={isDevMode} />
         <Skills isDevMode={isDevMode} />
-        <Shelf isDevMode={isDevMode} />
+        {/* <Shelf isDevMode={isDevMode} /> */}
         <Timeline isDevMode={isDevMode} />
       </main>
 

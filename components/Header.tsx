@@ -24,15 +24,42 @@ const Header: React.FC<HeaderProps> = ({ isDevMode, toggleMode }) => {
         <nav className="hidden md:flex items-center gap-8">
           {isDevMode ? (
             <>
-              <a href="#" className="text-sm font-mono text-slate-400 hover:text-indigo-400">~/home</a>
-              <a href="#" className="text-sm font-mono text-slate-400 hover:text-indigo-400">~/projects</a>
-              <a href="#" className="text-sm font-mono text-slate-400 hover:text-indigo-400">~/about</a>
+              {[
+                { name: '~/home', id: 'hero' },
+                { name: '~/projects', id: 'projects' },
+                { name: '~/stack', id: 'skills' },
+                { name: '~/experiences', id: 'timeline' },
+              ].map((link) => (
+                <button
+                  key={link.name}
+                  onClick={() => {
+                    document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="text-sm font-mono text-slate-400 hover:text-indigo-400 transition-colors"
+                >
+                  {link.name}
+                </button>
+              ))}
             </>
           ) : (
             <>
-              <a href="#" className="text-sm font-medium text-gray-600 hover:text-purple-600">Research</a>
-              <a href="#" className="text-sm font-medium text-gray-600 hover:text-purple-600">Publications</a>
-              <a href="#" className="text-sm font-medium text-gray-600 hover:text-purple-600">About</a>
+              {[
+                { name: 'Home', id: 'hero' },
+                { name: 'Research', id: 'projects' },
+                { name: 'Skills', id: 'skills' },
+                // { name: 'Shelf', id: 'shelf' },
+                { name: 'Education', id: 'timeline' },
+              ].map((link) => (
+                <button
+                  key={link.name}
+                  onClick={() => {
+                    document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="text-sm font-medium text-gray-600 hover:text-purple-600 transition-colors"
+                >
+                  {link.name}
+                </button>
+              ))}
             </>
           )}
         </nav>
@@ -54,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ isDevMode, toggleMode }) => {
           ) : (
             <>
               <Terminal size={16} />
-              <span className="text-xs font-bold">Dev Mode</span>
+              <span className="text-xs font-bold">Switch to Dev Mode</span>
             </>
           )}
         </button>

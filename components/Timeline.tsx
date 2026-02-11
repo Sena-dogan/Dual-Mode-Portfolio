@@ -7,7 +7,7 @@ interface TimelineProps {
 
 const Timeline: React.FC<TimelineProps> = ({ isDevMode }) => {
   return (
-    <section className={`py-20 px-6 ${isDevMode ? 'bg-[#0B1120]' : 'bg-white'}`}>
+    <section id="timeline" className={`py-20 px-6 ${isDevMode ? 'bg-[#0B1120]' : 'bg-white'}`}>
       <div className="max-w-4xl mx-auto">
         <div className="mb-12">
             <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold tracking-wide mb-4 ${

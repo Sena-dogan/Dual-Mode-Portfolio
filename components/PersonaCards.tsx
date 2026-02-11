@@ -22,18 +22,18 @@ const PersonaCards: React.FC<PersonaCardsProps> = ({ isDevMode }) => {
              
              <h3 className={`text-2xl font-bold mb-4 ${isDevMode ? 'text-white' : 'text-gray-900'}`}>The Physicist</h3>
              <p className={`mb-8 leading-relaxed ${isDevMode ? 'text-slate-400' : 'text-gray-600'}`}>
-               Delving into the fundamental building blocks of matter. Experience with Particle Physics, RadCat simulation frameworks, and research at CERN.
+               Exploring the subatomic world through code. Focused on Particle Physics simulations, ROOT framework data analysis, and developing scientific software like RadCat.
              </p>
              
              <div className="flex flex-wrap gap-2 mb-8">
-               {['Particle Physics', 'CERN', 'RadCat'].map(tag => (
+               {['Particle Physics', 'Nuclear Physics', 'RadCat'].map(tag => (
                  <span key={tag} className={`px-3 py-1 rounded-lg text-sm font-medium ${
                     isDevMode ? 'bg-slate-800 text-slate-300' : 'bg-gray-100 text-gray-600'
                  }`}>{tag}</span>
                ))}
              </div>
              
-             <a href="#" className="inline-flex items-center text-orange-600 font-semibold hover:gap-2 transition-all">
+             <a href="#projects" className="inline-flex items-center text-orange-600 font-semibold hover:gap-2 transition-all">
                View Research <ArrowRight size={16} className="ml-1" />
              </a>
           </div>
