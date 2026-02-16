@@ -3,9 +3,26 @@ import { Flame, Smartphone, ArrowRight } from 'lucide-react';
 
 interface PersonaCardsProps {
   isDevMode: boolean;
+  toggleMode: () => void;
 }
 
-const PersonaCards: React.FC<PersonaCardsProps> = ({ isDevMode }) => {
+const PersonaCards: React.FC<PersonaCardsProps> = ({ isDevMode, toggleMode }) => {
+  const handleViewMode = (targetMode: 'lab' | 'dev') => {
+    const isSwitching = (targetMode === 'dev' && !isDevMode) || (targetMode === 'lab' && isDevMode);
+
+    if (isSwitching) {
+      toggleMode();
+      // Scroll to top to show the new mode from the beginning
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Already in the target mode, scroll to projects
+      const projectsSection = document.getElementById('projects');
+      if (projectsSection) {
+          projectsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section className={`pt-10 pb-12 px-6 ${isDevMode ? 'bg-[#0F172A]' : 'bg-transparent'}`}>
        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -33,9 +50,12 @@ const PersonaCards: React.FC<PersonaCardsProps> = ({ isDevMode }) => {
                ))}
              </div>
              
-             <a href="#projects" className="inline-flex items-center text-orange-600 font-semibold hover:gap-2 transition-all">
-               View Research <ArrowRight size={16} className="ml-1" />
-             </a>
+             <button 
+                onClick={() => handleViewMode('lab')}
+                className="inline-flex items-center text-orange-600 font-semibold hover:gap-2 transition-all cursor-pointer bg-transparent border-none p-0"
+             >
+               View Lab Mode <ArrowRight size={16} className="ml-1" />
+             </button>
           </div>
 
           {/* Developer Card - Dev Mode Style */}
@@ -62,9 +82,12 @@ const PersonaCards: React.FC<PersonaCardsProps> = ({ isDevMode }) => {
                ))}
              </div>
              
-             <a href="https://github.com/Sena-dogan" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-blue-600 font-semibold hover:gap-2 transition-all">
-               View GitHub <ArrowRight size={16} className="ml-1" />
-             </a>
+             <button 
+                onClick={() => handleViewMode('dev')}
+                className="inline-flex items-center text-blue-600 font-semibold hover:gap-2 transition-all cursor-pointer bg-transparent border-none p-0"
+             >
+               View Developer Mode <ArrowRight size={16} className="ml-1" />
+             </button>
           </div>
        </div>
     </section>

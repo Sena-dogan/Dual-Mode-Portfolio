@@ -28,15 +28,15 @@ const Hero: React.FC<HeroProps> = ({ isDevMode, toggleMode }) => {
         {/* Buttons */}
         <div className="flex justify-center gap-4 mb-14">
           <a 
-            href={isDevMode ? "https://github.com/Sena-dogan" : "#projects"}
-            target={isDevMode ? "_blank" : "_self"}
-            rel={isDevMode ? "noopener noreferrer" : ""}
+            href={isDevMode ? "https://github.com/Sena-dogan" : "https://sena-dogan.github.io/cv_bumblebee/"}
+            target="_blank"
+            rel="noopener noreferrer"
             className={`px-6 py-3 rounded-lg font-medium transition-colors inline-block ${
             isDevMode
             ? 'bg-indigo-600 text-white hover:bg-indigo-700 font-mono'
             : 'bg-purple-600 text-white hover:bg-purple-700 shadow-md hover:shadow-lg'
           }`}>
-            {isDevMode ? 'View GitHub ->' : 'View Research'}
+            {isDevMode ? 'View GitHub ->' : 'View Resume'}
           </a>
           <a href="mailto:senadgn@proton.me" className={`px-6 py-3 rounded-lg font-medium border transition-colors inline-block ${
             isDevMode
@@ -109,7 +109,7 @@ const Hero: React.FC<HeroProps> = ({ isDevMode, toggleMode }) => {
                     <span className="text-slate-500 select-none mr-4">3</span> &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-blue-400">super</span>();<br/>
                     <span className="text-slate-500 select-none mr-4">4</span> &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-cyan-400">this</span>.role = <span className="text-green-400">'Developer && Product Designer'</span>;<br/>
                     <span className="text-slate-500 select-none mr-4">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-cyan-400">this</span>.location = <span className="text-green-400">'Istanbul, TR'</span>;<br/>
-                    <span className="text-slate-500 select-none mr-4">6</span> &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-cyan-400">this</span>.stack = [<span className="text-green-400">'Flutter'</span>, <span className="text-green-400">'C++'</span>];<br/>
+                    <span className="text-slate-500 select-none mr-4">6</span> &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-cyan-400">this</span>.stack = [<span className="text-green-400">'Flutter'</span>, <span className="text-green-400">'C/C++'</span>];<br/>
                     <span className="text-slate-500 select-none mr-4">7</span> &nbsp;&nbsp;{'}'}<br/>
                     <span className="text-slate-500 select-none mr-4">8</span> <br/>
                     <span className="text-slate-500 select-none mr-4">9</span> &nbsp;&nbsp;<span className="text-yellow-400">create</span>(<span className="text-orange-400">product</span>) {'{'}<br/>

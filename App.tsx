@@ -33,7 +33,7 @@ const App: React.FC = () => {
         <Hero isDevMode={isDevMode} toggleMode={toggleMode} />
         
         {/* Persona Cards Section */}
-        <PersonaCards isDevMode={isDevMode} />
+        <PersonaCards isDevMode={isDevMode} toggleMode={toggleMode} />
         
         {/* Content Section Divider */}
         <div className={`h-px w-full my-8 ${isDevMode ? 'bg-slate-800' : 'bg-gray-200'}`}></div>
